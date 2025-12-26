@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus AI | 150+ Professional Tools</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { background: #020617; color: white; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; }
+        .glass:hover { border-color: #3b82f6; transform: translateY(-5px); }
+    </style>
+</head>
+<body class="p-6 pb-24">
+
+    <nav class="max-w-5xl mx-auto flex justify-between items-center mb-10">
+        <h1 class="text-2xl font-black text-blue-500 italic">NEXUS AI</h1>
+        <div class="glass px-4 py-2 rounded-full text-[10px] font-bold tracking-widest text-slate-400">PC FUND: $45 / $1500</div>
+    </nav>
+
+    <header class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-4xl font-extrabold mb-4 leading-tight">Every Tool. <br><span class="text-blue-500">One Place.</span></h2>
+        <div class="relative">
+            <i class="fa-solid fa-magnifying-glass absolute left-5 top-1/2 -translate-y-1/2 text-slate-500"></i>
+            <input type="text" id="toolSearch" onkeyup="search()" placeholder="Search 150+ tools (e.g. 'Image', 'EMI', 'PDF')..." 
+            class="w-full glass p-5 pl-14 rounded-2xl outline-none focus:ring-2 ring-blue-500 transition">
+        </div>
+    </header>
+
+    <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="toolGrid">
+        
+        <a href="studio.html" class="glass p-8 rounded-[2.5rem] text-center block tool-card" data-tags="studio image photo art creator editing background">
+            <i class="fa-solid fa-wand-magic-sparkles text-3xl text-purple-500 mb-4"></i>
+            <h3 class="font-bold">Creative Studio</h3>
+            <p class="text-[10px] text-slate-500 mt-2 uppercase font-bold">AI Image Gen & Editing</p>
+        </a>
+
+        <a href="safety.html" class="glass p-8 rounded-[2.5rem] text-center block tool-card" data-tags="safety security password hacker audit link scan privacy">
+            <i class="fa-solid fa-shield-halved text-3xl text-red-500 mb-4"></i>
+            <h3 class="font-bold">Security Vault</h3>
+            <p class="text-[10px] text-slate-500 mt-2 uppercase font-bold">Password & Link Safety</p>
+        </a>
+
+        <a href="finance.html" class="glass p-8 rounded-[2.5rem] text-center block tool-card" data-tags="finance money emi loan tax wealth calculator gold crypto">
+            <i class="fa-solid fa-calculator text-3xl text-emerald-500 mb-4"></i>
+            <h3 class="font-bold">Finance Hub</h3>
+            <p class="text-[10px] text-slate-500 mt-2 uppercase font-bold">Wealth & Tax Tools</p>
+        </a>
+
+        <a href="creator.html" class="glass p-8 rounded-[2.5rem] text-center block tool-card" data-tags="creator seo tags viral youtube tiktok script hooks">
+            <i class="fa-solid fa-clapperboard text-3xl text-orange-500 mb-4"></i>
+            <h3 class="font-bold">Creator SEO</h3>
+            <p class="text-[10px] text-slate-500 mt-2 uppercase font-bold">Viral Tags & Scripts</p>
+        </a>
+
+    </div>
+
+    <script>
+        function search() {
+            let input = document.getElementById('toolSearch').value.toLowerCase();
+            let cards = document.getElementsByClassName('tool-card');
+            for (let i = 0; i < cards.length; i++) {
+                let tags = cards[i].getAttribute('data-tags');
+                cards[i].style.display = tags.includes(input) ? "block" : "none";
+            }
+        }
+    </script>
+</body>
+</html>
